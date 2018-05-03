@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Morse Codes</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+  
+  
+<ion-content padding>
+  <ion-list *ngFor="let morse of listOfCodes">
+    <ion-list-header>
+      <h1 style="text-decoration: underline">{{morse.character}}</h1>
+    </ion-list-header>
+    <ion-item>
+      <p style="font-size: 60px">{{morse.code}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
