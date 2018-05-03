@@ -8,15 +8,19 @@
 
 
 <ion-content padding>
-    <h3>Please enter character, number or words for encryption.</h3>
-    <ion-item>
-        <ion-label color="primary" floating>Input</ion-label>
-        <ion-input [(ngModel)]="userInput"></ion-input>
-    </ion-item>
-    <button ion-button round (click)="encrypt()">Encrypt</button>
-    <ion-card *ngIf="showCard">
-        <ion-card-content>
-          <p style="font-size: 60px">{{encrypted}}</p>
-        </ion-card-content>
-      </ion-card>
+  <h3>Please enter character, number or words for encryption.</h3>
+
+  <ion-item>
+      <ion-label color="primary" floating>Input</ion-label>
+      <ion-input [(ngModel)]="userInput"></ion-input>
+  </ion-item>
+
+  <button ion-button round (click)="encrypt()">Encrypt</button>
+
+  <ion-card *ngIf="showCard">
+    <ion-card-content>
+      <p style="font-size: 60px">{{encrypted}}</p>
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>

@@ -7,6 +7,8 @@ import { GetMorseProvider } from '../../providers/get-morse/get-morse';
   selector: 'page-encryption',
   templateUrl: 'encryption.html',
 })
+
+// encryption page where user inputs get to encrypt into morse codes
 export class EncryptionPage {
   listOfCodes: any = [];
   userInput: any;
@@ -15,31 +17,35 @@ export class EncryptionPage {
   showCard: boolean = false;
 
   constructor(private getMorse: GetMorseProvider) {
-  }
+  } // constructor
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EncryptionPage');
 
-    this.getMorse.GetMorseCodes().subscribe(data =>
-      {
-        this.listOfCodes = data.morse;
-      });
-  }
+    // get json data from provider
+    this.getMorse.GetMorseCodes().subscribe(data => {
+      this.listOfCodes = data.morse;
+    });
+  } // ionViewDidLoad()
 
+  // function encrypting user inputs
   encrypt(){
-    this.showCard = true;
+    this.showCard = true; // show morse card when button is pressed
+    this.encrypted = ""; // reset variable
+    this.str = this.userInput.toUpperCase(); // user input
 
-    this.encrypted = "";
-    this.str = this.userInput.toUpperCase();
-    for(let i = 0; i < this.userInput.length; i++){
-      for(let key of this.listOfCodes){
-        if(this.str.charAt(i) == key.character){
+    for(let i = 0; i < this.userInput.length; i++){ // loop each character of the user input
+      for(let key of this.listOfCodes){ // loop every sets of data (character & morse) from the list of codes
+        if(this.str.charAt(i) == key.character){ // if the character is matched with the character in the json
+          // concat the morse codes seperated with space between each character
           this.encrypted = this.encrypted.concat(key.code);
           this.encrypted = this.encrypted.concat(" ");
-        }
-      }
+        } // if 
+      } // for each key
+
       if(this.str.charAt(i) == " ")
-          this.encrypted = this.encrypted.concat(" / ");
-    }
-  }
-}
+          this.encrypted = this.encrypted.concat(" / "); // if there is space, seperate with '/'
+    } // for i
+  } // encrypt()
+
+} // class

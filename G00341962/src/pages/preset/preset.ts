@@ -10,6 +10,8 @@ import 'rxjs/add/operator/debounceTime';
   selector: 'page-preset',
   templateUrl: 'preset.html',
 })
+
+// display common used abbreviations of morse codes and their descriptions
 export class PresetPage {
   searchTerm: string = "";
   listOfPresets: any = [];
@@ -18,29 +20,35 @@ export class PresetPage {
 
   constructor(private getMorse: GetMorseProvider, private search: SearchProvider) {
     this.searchControl = new FormControl();
-  }
+  } // constructor()
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PresetPage');
+
+    // filter item when search bar is inputted
     this.setFilteredItems();
+
+    // set a delay to prevent spam and let user input finish before searching
     this.searchControl.valueChanges.debounceTime(700).subscribe(search => {
       this.searching = false;
       this.setFilteredItems();
     });
-  }
+  } // ionViewDidLoad()
 
   ngOnInit(){
-    this.getMorse.GetMorseCodes().subscribe(data =>
-    {
+    // initialize the content of the view
+    this.getMorse.GetMorseCodes().subscribe(data => {
       this.listOfPresets = data.presets;
     });
-  }
+  } // ngOnInit()
 
   setFilteredItems(){
+    // filter the list of items for the search
     this.listOfPresets = this.search.filterPrefix(this.searchTerm);
-  }
+  } // setFilteredItems()
   
   onSearchInput(){
     this.searching = true;
-  }
-}
+  } // onSearchInput()
+
+} // class
