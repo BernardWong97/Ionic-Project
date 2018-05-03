@@ -12,8 +12,7 @@ export class GetMorseProvider {
   }
 
   GetMorseCodes():Observable<any>{
-    return this.http.get("https://www.jsonblob.com/api/e4516fd9-4e37-11e8-ad5f-1dc5490bd89e")
+    return this.http.get("https://www.jsonblob.com/api/1c288042-4f0f-11e8-8766-03f1a0e86055")
     .map(obs => obs.json());
   }
-
 }

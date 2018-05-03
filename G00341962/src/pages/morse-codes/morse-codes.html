@@ -8,6 +8,7 @@
   
   
 <ion-content padding>
+  <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl"></ion-searchbar>
   <ion-list *ngFor="let morse of listOfCodes">
     <ion-list-header>
       <h1 style="text-decoration: underline">{{morse.character}}</h1>

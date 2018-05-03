@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { GetMorseProvider } from '../providers/get-morse/get-morse';
 import { PresetPage } from '../pages/preset/preset';
 import { HttpModule } from '@angular/http';
+import { SearchProvider } from '../providers/search/search';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GetMorseProvider
+    GetMorseProvider,
+    SearchProvider
   ]
 })
 export class AppModule {}

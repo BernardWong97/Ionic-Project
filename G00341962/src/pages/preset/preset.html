@@ -8,5 +8,22 @@
 
 
 <ion-content padding>
-  
+  <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl"></ion-searchbar>
+  <ion-list *ngFor="let preset of listOfPresets">
+    <ion-list-header>
+      <h1 style="text-decoration: underline">{{preset.abbreviations}}</h1>
+    </ion-list-header>
+    <ion-item>
+      <ion-card>
+        <ion-card-content>
+          <p style="font-size: 60px">{{preset.code}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-card>
+      <ion-card-content>
+        {{preset.description}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

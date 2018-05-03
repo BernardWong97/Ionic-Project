@@ -19,13 +19,11 @@ export class EncryptionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EncryptionPage');
-  }
 
-  ngOnInit(){
     this.getMorse.GetMorseCodes().subscribe(data =>
-    {
-      this.listOfCodes = data.morse;
-    });
+      {
+        this.listOfCodes = data.morse;
+      });
   }
 
   encrypt(){
