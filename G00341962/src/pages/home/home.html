@@ -1,17 +1,43 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Morse Encryptor</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-card (click)="toMorseCodes()">
+      <ion-card-header>
+        Morse Codes
+      </ion-card-header>
+      <ion-card-content>
+        List of each letter / number representative morse codes.
+      </ion-card-content>
+    </ion-card>
+
+  <ion-card (click)="toPreset()">
+    <ion-card-header>
+      Abbreviations
+    </ion-card-header>
+    <ion-card-content>
+      Typical morse code abbreviations that is used facilitate short efficient Morse code communications.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Flash-Light
+    </ion-card-header>
+    <ion-card-content>
+      Send preset morse code abbreviations to mobile phone flashlight to emit flash morse codes.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="toEncryption()">
+    <ion-card-header>
+      Encryption
+    </ion-card-header>
+    <ion-card-content>
+      Input characters, numbers or words to encrypt into morse code.
+    </ion-card-content>
+  </ion-card>
 </ion-content>
