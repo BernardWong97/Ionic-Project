@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import { GetMorseProvider } from '../../providers/get-morse/get-morse';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,7 @@ export class EncryptionPage {
   encrypted: string;
   showCard: boolean = false;
 
-  constructor(private getMorse: GetMorseProvider) {
+  constructor(private getMorse: GetMorseProvider, private storage: Storage) {
   } // constructor
 
   ionViewDidLoad() {
@@ -28,9 +29,29 @@ export class EncryptionPage {
     });
   } // ionViewDidLoad()
 
+  ionViewWillEnter(){
+    this.storage.get("userInput").then((data) => {
+      this.userInput = data;
+    }).catch((err) => {
+      alert("Error accesssing Storage")
+    })
+  } // ionViewWillEnter()
+
+  saveInput(){
+    this.storage.set("userInput", this.userInput);
+  }
+
   // function encrypting user inputs
   encrypt(){
-    this.showCard = true; // show morse card when button is pressed
+    // if user input not empty,show morse card and save user input when button is pressed
+    if(this.userInput.length != 0){
+      this.saveInput()
+      this.showCard = true; 
+    }
+    else{
+      this.showCard = false;
+    } // if
+      
     this.encrypted = ""; // reset variable
     this.str = this.userInput.toUpperCase(); // user input
 

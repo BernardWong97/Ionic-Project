@@ -1,4 +1,3 @@
-import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { GetMorseProvider } from '../../providers/get-morse/get-morse';
 import "rxjs/add/operator/map";
@@ -9,7 +8,7 @@ export class SearchProvider {
   prefix: any = [];
   letter: any = [];
 
-  constructor(private http: Http, private getMorse: GetMorseProvider) {
+  constructor(private getMorse: GetMorseProvider) {
     console.log('Hello SearchProvider Provider');
 
     // get prefixes data from JSON
