@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Introduction</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-slides pager="true" parallax="true" padding>
+  
+      <ion-slide>
+        <h1>Welcome to Morse Encryptor App!</h1>
+      </ion-slide>
+  
+      <ion-slide>
+        <h1>Here's what you can do with the app:</h1>
+        <p>~ Display each letter and number's morse codes.</p>
+        <p>~ Display some typical used morse code abbreviations.</p>
+        <p>~ Vibrate mobile phone by the morse codes.</p>
+        <p>~ Enter words and translate into morse codes.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/homepage.png" width="200" height="350"></ion-img>
+        <p>The main menu is where you choose the functionality of the app.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/morseCodes.png" width="200" height="350"></ion-img>
+        <p>Morse Codes: Display a list of each letter and numbers with their morse codes.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/searchMorse.png" width="200" height="350"></ion-img>
+        <p>You can search letters or numbers by using the searchbar.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/abbreviations.png" width="200" height="350"></ion-img>
+        <p>Abbreviations: Display a list of typical used morse codes abbreviations.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/abbreviationsSearch.png" width="200" height="350"></ion-img>
+        <p>You can search by their descriptions like "Good Morning" or "Help".</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/vibrate.png" width="200" height="350"></ion-img>
+        <p>Mobile Vibrate: Select the morse codes and it will vibrate your mobile phone by the tempo of the morse codes.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/input.png" width="200" height="350"></ion-img>
+        <p>Encryption: Input words and it will translate into morse codes for you.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/testEnc.png" width="200" height="350"></ion-img>
+        <p>The app will also save your last input.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/about.png" width="200" height="350"></ion-img>
+        <p>The about page where holds all the information of the app.</p>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="assets/imgs/contact.png" width="200" height="350"></ion-img>
+        <p>The contact page where holds all the contact info of the developer</p>
+      </ion-slide>
+  
+      <ion-slide>
+        <h1>Get started now!</h1>
+        <button ion-button outline small (click)="toHome()">
+          Start using the app
+        </button>
+      </ion-slide>
+  
+    </ion-slides>
+  </ion-content>

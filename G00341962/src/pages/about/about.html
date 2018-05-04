@@ -7,6 +7,51 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Morse Encryptor!</h2>
-  <p>This app is used to encrypt words into morse codes.</p>
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="time"></ion-icon>
+        Version 
+      </ion-card-header>
+      <ion-card-content>
+        0.0.1
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="book"></ion-icon>
+        Tutorial 
+      </ion-card-header>
+      <ion-card-content>
+        <button ion-button round outline color="dark" (click)="toIntro()">Button for Introduction</button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="information-circle"></ion-icon>
+        About 
+      </ion-card-header>
+      <ion-card-content>
+        <p>This app is used to translate letters and numbers into morse codes. It is simple and easy to use.</p>
+        <p>Open source code:</p>
+        <button ion-button round outline color="dark" href="#" 
+          onclick="window.open('https://github.com/BernardWong97/Ionic-Project', '_system', 'location=yes'); return false;">
+        GitHub</button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="person"></ion-icon>
+        Author 
+      </ion-card-header>
+      <ion-card-content>
+        <p>Name: Bernard Wong</p>
+        <button ion-button round outline color="dark" href="#" 
+          onclick="window.open('https://github.com/BernardWong97', '_system', 'location=yes'); return false;">
+        GitHub</button>
+      </ion-card-content>
+    </ion-card>
+
 </ion-content>
