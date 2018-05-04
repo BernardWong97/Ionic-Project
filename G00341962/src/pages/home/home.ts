@@ -8,19 +8,23 @@ import { PresetPage } from '../preset/preset';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-  }
+  constructor(private navCtrl: NavController) {
+  } // constructor
 
   toMorseCodes(){
     this.navCtrl.push("MorseCodesPage");
-  }
+  } // toMorseCodes()
 
   toPreset(){
     this.navCtrl.push(PresetPage);
-  }
+  } // toPreset()
 
   toEncryption(){
     this.navCtrl.push("EncryptionPage");
-  }
+  } // toEncryption()
 
-}
+  toVibration(){
+    this.navCtrl.push("VibratePage");
+  } // toVibration()
+
+} // class

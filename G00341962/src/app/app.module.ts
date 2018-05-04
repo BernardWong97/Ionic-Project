@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import {IonicStorageModule} from '@ionic/storage';
+import { Vibration } from '@ionic-native/vibration';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -45,7 +46,8 @@ import { SearchProvider } from '../providers/search/search';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GetMorseProvider,
-    SearchProvider
+    SearchProvider,
+    Vibration
   ]
 })
 export class AppModule {}

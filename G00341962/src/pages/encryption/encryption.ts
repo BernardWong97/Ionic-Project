@@ -34,12 +34,13 @@ export class EncryptionPage {
       this.userInput = data;
     }).catch((err) => {
       alert("Error accesssing Storage")
-    })
+    });
   } // ionViewWillEnter()
 
   saveInput(){
+    // save user input into storage
     this.storage.set("userInput", this.userInput);
-  }
+  } // saveInput()
 
   // function encrypting user inputs
   encrypt(){
